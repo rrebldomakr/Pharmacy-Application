@@ -1,47 +1,32 @@
-// Grab DOM nodes
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-const decryptBtn = document.getElementById('decryptBtn');
-const contactInfo = document.getElementById('contactInfo');
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop page refresh
 
-// --- ENGINE 1: Re-engineered Card Filter System ---
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Toggle active button states
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.add('active');
+    // 1. Grab values from inputs
+    const nameInput = document.getElementById('username').value;
+    const messageInput = document.getElementById('message').value;
+    const feedback = document.getElementById('formFeedback');
 
-        const filterValue = button.getAttribute('data-filter');
-
-        projectCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+    // 2. Simple XSS Mitigation Function (Sanitization)
+    function sanitizeInput(str) {
+        return str.replace(/[&<>"']/g, function(match) {
+            const escapeChars = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#x27;'
+            };
+            return escapeChars[match];
         });
-    });
-});
+    }
 
-// --- ENGINE 2: Native Clickable Tile Navigation ---
-projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const url = card.getAttribute('data-link');
-        // Only run navigation if the string is set and not a placeholder '#'
-        if (url && url !== '#') {
-            window.open(url, '_blank');
-        }
-    });
-});
+    const cleanName = sanitizeInput(nameInput);
+    const cleanMessage = sanitizeInput(messageInput);
 
-// --- ENGINE 3: Secure Comms Terminal Decryption ---
-if (decryptBtn && contactInfo) {
-    decryptBtn.addEventListener('click', () => {
-        contactInfo.classList.toggle('hidden');
-        if (!contactInfo.classList.contains('hidden')) {
-            decryptBtn.innerText = "🔒 Lock Comms Channel";
-        } else {
-            decryptBtn.innerText = "🔓 Decrypt Contact Data";
-        }
-    });
-}
+    // 3. Execution / UI Update
+    feedback.style.color = '#00ff66';
+    feedback.innerHTML = `Transmission received safely, ${cleanName}.`;
+    
+    // Clear the form
+    document.getElementById('contactForm').reset();
+});
