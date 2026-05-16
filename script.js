@@ -22,6 +22,29 @@ filterButtons.forEach(button => {
     });
 });
 
+// --- NATIVE CLICKABLE TILE REDIRECTIONS ---
+projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const projectId = card.getAttribute('data-id');
+        
+        switch (projectId) {
+            case 'lekker':
+                window.open('http://localhost/lekker-exchange/index.php', '_blank');
+                break;
+            case 'weather-app':
+                window.open('https://rrebldomakr.github.io/Global-Pass/', '_blank');
+                break;
+            case 'budget-tracker':
+                window.open('https://rrebldomakr.github.io/student-task-manager/', '_blank');
+                break;
+            case 'security-tool':
+            case 'portfolio':
+                // Placeholders for local files or other github links
+                break;
+        }
+    });
+});
+
 // --- DECRYPTION TERMINAL INTERACTION ---
 const decryptBtn = document.getElementById('decryptBtn');
 const contactInfo = document.getElementById('contactInfo');
