@@ -1,32 +1,38 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop page refresh
+// --- INTERACTIVE ARCHIVE FILTERS ---
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-    // 1. Grab values from inputs
-    const nameInput = document.getElementById('username').value;
-    const messageInput = document.getElementById('message').value;
-    const feedback = document.getElementById('formFeedback');
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons and add to clicked one
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-    // 2. Simple XSS Mitigation Function (Sanitization)
-    function sanitizeInput(str) {
-        return str.replace(/[&<>"']/g, function(match) {
-            const escapeChars = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#x27;'
-            };
-            return escapeChars[match];
+        const selectedFilter = button.getAttribute('data-filter');
+
+        // Show/Hide cards dynamically
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (selectedFilter === 'all' || cardCategory === selectedFilter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
         });
-    }
+    });
+});
 
-    const cleanName = sanitizeInput(nameInput);
-    const cleanMessage = sanitizeInput(messageInput);
+// --- DECRYPTION TERMINAL INTERACTION ---
+const decryptBtn = document.getElementById('decryptBtn');
+const contactInfo = document.getElementById('contactInfo');
 
-    // 3. Execution / UI Update
-    feedback.style.color = '#00ff66';
-    feedback.innerHTML = `Transmission received safely, ${cleanName}.`;
-    
-    // Clear the form
-    document.getElementById('contactForm').reset();
+decryptBtn.addEventListener('click', () => {
+    decryptBtn.innerText = "BYPASSING FIREWALL... LOADING DATA...";
+    decryptBtn.style.disabled = true;
+
+    // Simulate a slight terminal lag delay for immersion
+    setTimeout(() => {
+        decryptBtn.classList.add('hidden');
+        contactInfo.classList.remove('hidden');
+    }, 1200); 
 });
