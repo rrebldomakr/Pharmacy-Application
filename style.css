@@ -59,13 +59,12 @@ h1, h2, h3 { color: #ff3333; }
     background: #141414;
     border: 1px solid #222;
     padding: 20px;
-    cursor: pointer; /* Makes it obvious the whole tile can be clicked */
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
 }
 .project-card:hover {
     transform: translateY(-3px);
     border-color: #ff3333;
-    box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
 }
 .tags { margin-top: 15px; }
 .tag {
