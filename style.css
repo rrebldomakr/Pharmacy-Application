@@ -1,129 +1,66 @@
-/* === THE DREADFOLIO GLOBAL INTERFACE === */
-:root {
-    --bg-black: #050505;
-    --terminal-dark: #0a0a0a;
-    --accent-red: #ff3333;
-    --accent-green: #00ff88;
-    --text-green: #33ff33;
-    --border-color: #222222;
-}
-
+/* Core Theme Settings */
 body {
-    background-color: var(--bg-black);
-    color: var(--text-green);
+    background-color: #0d0d0d;
+    color: #00ff66; /* Eerie terminal green */
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-/* Cyber CRT Scanline Effects */
-.scanlines {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 4px, 6px 100%;
-    z-index: 999;
-    pointer-events: none;
+header, section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    border: 1px solid #1a1a1a;
+    background: #111111;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
 }
 
-header {
-    border-bottom: 2px dashed var(--accent-red);
-    padding: 60px 20px;
-    background: var(--terminal-dark);
-    margin-bottom: 40px;
-    border-left: 5px solid var(--accent-red);
+h1, h2, h3 {
+    color: #ff3333; /* Blood red accents */
+    text-transform: uppercase;
 }
 
-.hero-container { max-width: 1000px; margin: 0 auto; }
-
-h1.glitch {
-    font-size: 3rem;
-    color: var(--accent-red);
-    text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
-    margin: 0 0 10px 0;
-}
-
-.subtitle { color: var(--text-green); opacity: 0.8; font-size: 1.1rem; }
-
-section { max-width: 1000px; margin: 0 auto 50px auto; padding: 0 20px; }
-
-h2 { color: var(--accent-red); font-size: 1.8rem; margin-bottom: 10px; }
-.section-desc { color: var(--text-green); margin-bottom: 25px; }
-
-/* Filter Buttons Layout */
-.filter-container { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-
-.filter-btn {
-    background: transparent;
-    border: 1px solid var(--accent-green);
-    color: var(--accent-green);
-    padding: 10px 20px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background: var(--accent-green);
-    color: var(--bg-black);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
-}
-
-/* Grid Framework Architecture */
-.project-grid {
+/* Skills Grid Configuration */
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* Restored Cyber Card Design */
-.project-card {
-    background: var(--terminal-dark);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--accent-red);
-    padding: 25px;
-    position: relative;
-    padding-bottom: 50px;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+.skill-card {
+    background: #1a1a1a;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ff3333;
+    font-weight: bold;
 }
 
-.project-card h3 { color: var(--accent-red); margin-top: 0; font-size: 1.3rem; }
-.project-card p { color: var(--text-green); font-size: 0.95rem; line-height: 1.5; opacity: 0.9; }
-
-.tags { display: flex; gap: 10px; margin-top: 15px; }
-.tag { border: 1px solid var(--border-color); padding: 3px 8px; font-size: 0.75rem; color: var(--text-green); opacity: 0.7; }
-
-/* Clickable Status Bar indicator */
-.terminal-status {
-    position: absolute;
-    bottom: 15px;
-    left: 25px;
-    font-size: 0.8rem;
-    color: #444;
-    letter-spacing: 1px;
-    transition: color 0.2s ease;
+/* Inputs & Form Styling */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #000;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    font-family: inherit;
+    box-sizing: border-box;
 }
 
-/* Hover Interaction Controls */
-.project-card:hover {
-    border-color: var(--accent-green);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.15);
-    transform: translateY(-3px);
+button {
+    background: #ff3333;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.project-card:hover .terminal-status {
-    color: var(--accent-green);
-    text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+button:hover {
+    background: #00ff66;
+    box-shadow: 0 0 15px #00ff66;
 }
-
-/* Secure Comms Styles */
-.terminal-box { background: var(--terminal-dark); border: 1px solid var(--border-color); padding: 30px; }
-#decryptBtn { background: transparent; border: 1px solid var(--accent-red); color: var(--accent-red); padding: 12px 24px; font-family: inherit; cursor: pointer; font-weight: bold; }
-#decryptBtn:hover { background: var(--accent-red); color: var(--bg-black); box-shadow: 0 0 15px rgba(255, 51, 51, 0.4); }
-
-.comms-line { margin-top: 15px; font-size: 1.1rem; }
-.comms-line a { color: var(--accent-green); text-decoration: none; }
-.comms-line a:hover { text-decoration: underline; }
-
-.hidden { display: none; }
