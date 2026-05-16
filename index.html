@@ -1,51 +1,109 @@
-<div class="project-grid">
-    <div class="project-card" data-category="fullstack" data-link="#">
-        <h3>📦 Lekker Exchange</h3>
-        <p>A C2C trading platform engineered for informal traders. Built with a robust development lifecycle to optimize community commerce.</p>
-        <div class="tags">
-            <span class="tag">Full-Stack</span>
-            <span class="tag">SDLC</span>
-        </div>
-        <span class="terminal-status">LAUNCH_ASSET >></span>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreadFolio | Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="project-card" data-category="security" data-link="#">
-        <h3>🔑 Authentication Bypass & APK Reverse Engineering</h3>
-        <p>An ethical hacking project focused on decompiling APK login protocols, auditing source code vulnerabilities, and patching security flaws.</p>
-        <div class="tags">
-            <span class="tag">Security</span>
-            <span class="tag">Android Studio</span>
-        </div>
-        <span class="terminal-status">LAUNCH_ASSET >></span>
-    </div>
+    <div class="scanlines"></div>
 
-    <div class="project-card" data-category="utilities" data-link="https://rrebldomakr.github.io/Global-Pass/">
-        <h3>🌍 Global Pulse Engine</h3>
-        <p>An asynchronous web interface pulling live meteorological JSON payloads from remote environments. Implements strict client-side event loops and event listeners.</p>
-        <div class="tags">
-            <span class="tag">Vanilla JS</span>
-            <span class="tag">REST API</span>
+    <header>
+        <div class="hero-container">
+            <h1 class="glitch" data-text="SYSTEM_OVERRIDE">SYSTEM_OVERRIDE</h1>
+            <p class="subtitle">A full-stack portfolio built in the shadows.</p>
         </div>
-        <span class="terminal-status">LAUNCH_ASSET >></span>
-    </div>
+    </header>
 
-    <div class="project-card" data-category="utilities" data-link="https://rrebldomakr.github.io/student-task-manager/">
-        <h3>💰 Smart Budget Analytics</h3>
-        <p>A reactive financial engine monitoring discretionary asset flows. Features conditional state styling that triggers visual alerts based on mathematical array criteria.</p>
-        <div class="tags">
-            <span class="tag">Data Logic</span>
-            <span class="tag">Storage API</span>
-        </div>
-        <span class="terminal-status">LAUNCH_ASSET >></span>
-    </div>
+    <section id="projects">
+        <h2>📂 The Vault (Project Archive)</h2>
+        <p class="section-desc">Filter through secure network assets and deployments (Click a tile to launch):</p>
 
-    <div class="project-card" data-category="fullstack" data-link="#">
-        <h3>👻 DreadFolio</h3>
-        <p>An immersive horror-themed terminal featuring advanced DOM manipulation, data sanitization, and interactive CSS architectures.</p>
-        <div class="tags">
-            <span class="tag">Vanilla JS</span>
-            <span class="tag">UI/UX</span>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Files</button>
+            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            <button class="filter-btn" data-filter="utilities">System Utilities</button>
+            <button class="filter-btn" data-filter="security">Security / Tools</button>
         </div>
-        <span class="terminal-status">LAUNCH_ASSET >></span>
-    </div>
-</div>
+
+        <div class="project-grid">
+            
+            <div class="project-card" data-category="fullstack" data-link="#">
+                <h3>📦 Lekker Exchange</h3>
+                <p>A C2C trading platform engineered for informal traders. Built with a robust development lifecycle to optimize community commerce.</p>
+                <div class="tags">
+                    <span class="tag">Full-Stack</span>
+                    <span class="tag">SDLC</span>
+                </div>
+                <span class="terminal-status">LAUNCH_ASSET >></span>
+            </div>
+
+            <div class="project-card" data-category="security" data-link="#">
+                <h3>🔑 Authentication Bypass & APK Reverse Engineering</h3>
+                <p>An ethical hacking project focused on decompiling APK login protocols, auditing source code vulnerabilities, and patching security flaws.</p>
+                <div class="tags">
+                    <span class="tag">Security</span>
+                    <span class="tag">Android Studio</span>
+                </div>
+                <span class="terminal-status">LAUNCH_ASSET >></span>
+            </div>
+
+            <div class="project-card" data-category="utilities" data-link="https://rrebldomakr.github.io/Global-Pass/">
+                <h3>🌍 Global Pulse Engine</h3>
+                <p>An asynchronous web interface pulling live meteorological JSON payloads from remote environments. Implements strict client-side event loops and event listeners.</p>
+                <div class="tags">
+                    <span class="tag">Vanilla JS</span>
+                    <span class="tag">REST API</span>
+                </div>
+                <span class="terminal-status">LAUNCH_ASSET >></span>
+            </div>
+
+            <div class="project-card" data-category="utilities" data-link="https://rrebldomakr.github.io/student-task-manager/">
+                <h3>💰 Smart Budget Analytics</h3>
+                <p>A reactive financial engine monitoring discretionary asset flows. Features conditional state styling that triggers visual alerts based on mathematical array criteria.</p>
+                <div class="tags">
+                    <span class="tag">Data Logic</span>
+                    <span class="tag">Storage API</span>
+                </div>
+                <span class="terminal-status">LAUNCH_ASSET >></span>
+            </div>
+
+            <div class="project-card" data-category="fullstack" data-link="#">
+                <h3>👻 DreadFolio</h3>
+                <p>An immersive horror-themed terminal featuring advanced DOM manipulation, data sanitization, and interactive CSS architectures.</p>
+                <div class="tags">
+                    <span class="tag">Vanilla JS</span>
+                    <span class="tag">UI/UX</span>
+                </div>
+                <span class="terminal-status">LAUNCH_ASSET >></span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>📟 Secure Comms Terminal</h2>
+        <p>Establish a secure link. Press the button below to decrypt the developer's direct communication channels.</p>
+
+        <div class="terminal-box">
+            <button id="decryptBtn">🔓 Decrypt Contact Data</button>
+
+            <div id="contactInfo" class="hidden">
+                <div class="comms-line"><strong>STATUS:</strong> SECURE LINK ESTABLISHED</div>
+                <div class="comms-line">
+                    <strong>✉️ EMAIL:</strong>
+                    <a href="mailto:olwamnhose5@gmail.com">olwamnhose5@gmail.com</a>
+                </div>
+                <div class="comms-line">
+                    <strong>💬 WHATSAPP:</strong>
+                    <a href="https://wa.me/27813988827" target="_blank">081 398 8827</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
