@@ -6,7 +6,7 @@ filterButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Remove active class from all buttons and add to clicked one
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+        button.classList.add('active'); // FIXED: Added .classList back here
 
         const selectedFilter = button.getAttribute('data-filter');
 
@@ -39,7 +39,7 @@ projectCards.forEach(card => {
                 break;
             case 'security-tool':
             case 'portfolio':
-                // Placeholders for local files or other github links
+                // Placeholders for your other files/links
                 break;
         }
     });
