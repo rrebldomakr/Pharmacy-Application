@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Terminal Overlay for Atmosphere -->
     <div class="scanlines"></div>
 
     <header>
@@ -18,21 +17,19 @@
         </div>
     </header>
 
-    <!-- Interactive Project Showcase -->
     <section id="projects">
         <h2>📂 The Vault (Project Archive)</h2>
         <p class="section-desc">Filter through secure network assets and deployments:</p>
         
-        <!-- Interactive Filter Buttons -->
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">All Files</button>
             <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            <button class="filter-btn" data-filter="utilities">System Utilities</button>
             <button class="filter-btn" data-filter="security">Security / Tools</button>
         </div>
 
         <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card" data-category="fullstack">
+            <div class="project-card" data-category="fullstack" data-id="lekker">
                 <h3>📦 Lekker Exchange</h3>
                 <p>A C2C trading platform engineered for informal traders. Built with a robust development lifecycle to optimize community commerce.</p>
                 <div class="tags">
@@ -41,8 +38,7 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card" data-category="security">
+            <div class="project-card" data-category="security" data-id="security-tool">
                 <h3>🔑 Authentication Bypass & APK Reverse Engineering</h3>
                 <p>An ethical hacking project focused on decompiling APK login protocols, auditing source code vulnerabilities, and patching security flaws.</p>
                 <div class="tags">
@@ -51,8 +47,25 @@
                 </div>
             </div>
 
-            <!-- Project 3 (This Site) -->
-            <div class="project-card" data-category="fullstack">
+            <div class="project-card" data-category="utilities" data-id="weather-app">
+                <h3>🌍 Global Pulse Engine</h3>
+                <p>An asynchronous web interface pulling live meteorological JSON payloads from remote environments. Implements strict client-side event loops and event listeners.</p>
+                <div class="tags">
+                    <span class="tag">Vanilla JS</span>
+                    <span class="tag">REST API</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="utilities" data-id="budget-tracker">
+                <h3>💰 Smart Budget Analytics</h3>
+                <p>A reactive financial engine monitoring discretionary asset flows. Features conditional state styling that triggers visual alerts based on mathematical array criteria.</p>
+                <div class="tags">
+                    <span class="tag">Data Logic</span>
+                    <span class="tag">Storage API</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="fullstack" data-id="portfolio">
                 <h3>👻 DreadFolio</h3>
                 <p>An immersive horror-themed terminal featuring advanced DOM manipulation, data sanitization, and interactive CSS architectures.</p>
                 <div class="tags">
@@ -63,7 +76,6 @@
         </div>
     </section>
 
-    <!-- Interactive Decryption Contact Page -->
     <section id="contact">
         <h2>📟 Secure Comms Terminal</h2>
         <p>Establish a secure link. Press the button below to decrypt the developer's direct communication channels.</p>
@@ -71,7 +83,6 @@
         <div class="terminal-box">
             <button id="decryptBtn">🔓 Decrypt Contact Data</button>
             
-            <!-- Hidden until decrypted -->
             <div id="contactInfo" class="hidden">
                 <div class="comms-line"><strong>STATUS:</strong> SECURE LINK ESTABLISHED</div>
                 <div class="comms-line">
