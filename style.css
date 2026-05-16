@@ -1,25 +1,40 @@
-/* --- TERMINAL REFRESH LAUNCH BUTTONS --- */
-.deployment-links {
-    margin-top: 15px;
-    text-align: left;
+/* --- INTERACTIVE CLICKABLE TILES --- */
+.project-card-link {
+    text-decoration: none; /* Kills default text underlining */
+    color: inherit;       /* Forces link to respect your global text colors */
+    display: block;       /* Enables the entire anchor wrap box layout */
+    transition: transform 0.2s ease;
 }
 
-.launch-btn {
-    display: inline-block;
-    padding: 6px 12px;
-    background: transparent;
-    border: 1px dashed #00ff88; /* Glowing green terminal accents */
-    color: #00ff88;
-    text-decoration: none;
+.project-card {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 45px; /* Creates baseline safety space for status text */
+}
+
+/* Subtle glowing layout when hovering over the tile */
+.project-card-link:hover .project-card {
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.15);
+}
+
+.project-card-link:hover {
+    transform: translateY(-3px); /* Cards slide up slightly on focus */
+}
+
+/* Cyber Terminal Action Prompt Details */
+.terminal-status {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
     font-family: monospace;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
+    font-size: 0.75rem;
+    color: #43547b; /* Dark neutral baseline color */
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
 }
 
-.launch-btn:hover {
-    background: rgba(0, 255, 136, 0.1);
-    border-style: solid;
-    box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
-    transform: translateY(-1px);
+.project-card-link:hover .terminal-status {
+    color: #00ff88; /* Swaps to terminal green on hover */
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
 }
