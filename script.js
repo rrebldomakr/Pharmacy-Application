@@ -6,7 +6,7 @@ filterButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Remove active class from all buttons and add to clicked one
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active'); // FIXED: Added .classList back here
+        button.classList.add('active'); 
 
         const selectedFilter = button.getAttribute('data-filter');
 
@@ -24,12 +24,19 @@ filterButtons.forEach(button => {
 
 // --- NATIVE CLICKABLE TILE REDIRECTIONS ---
 projectCards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+        // FIX: If they specifically click your new text link, let the link handle it
+        // This prevents opening the same live site in two different tabs at once!
+        if (e.target.closest('.project-link')) {
+            return; 
+        }
+
         const projectId = card.getAttribute('data-id');
         
         switch (projectId) {
             case 'lekker':
-                window.open('http://localhost/lekker-exchange/index.php', '_blank');
+                // FIX: Swapped out localhost for your actual live recruitment link
+                window.open('http://lekkerexchange.infinityfreeapp.com/', '_blank');
                 break;
             case 'weather-app':
                 window.open('https://rrebldomakr.github.io/Global-Pass/', '_blank');
@@ -51,7 +58,10 @@ const contactInfo = document.getElementById('contactInfo');
 
 decryptBtn.addEventListener('click', () => {
     decryptBtn.innerText = "BYPASSING FIREWALL... LOADING DATA...";
-    decryptBtn.style.disabled = true;
+    
+    // FIX: Changed from .style.disabled to proper boolean attribute 
+    // This stops double-clicks while the terminal lag effect runs
+    decryptBtn.disabled = true; 
 
     // Simulate a slight terminal lag delay for immersion
     setTimeout(() => {
