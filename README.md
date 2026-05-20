@@ -1,11 +1,11 @@
 # Olwam Nhose | Master Portfolio Site 🌐
 
-A high-performance, security-conscious personal portfolio designed and engineered to showcase full-stack development, systems logic, and application security projects. 
+A high-performance, security conscious personal portfolio designed and engineered to showcase full-stack development, systems logic, and application security projects. 
 
-Built completely with a retro-futuristic, high-contrast terminal aesthetic, this platform serves as an interactive hub for employers to audit my technical capabilities, code repositories, and engineering background.
+Built completely with a retro futuristic, high-contrast terminal aesthetic, this platform serves as an interactive hub for employers to audit my technical capabilities, code repositories, and engineering background.
 
 ## 📁 Live Link
-🔗 [View Live Portfolio](https://yourusername.github.io/) *(Replace with your actual GitHub Pages link)*
+🔗 [View Live Portfolio](https://rrebldomakr.github.io/My-Portfolio-Page/) 
 
 ## 🛠️ Technical Highlights & Architecture
 
@@ -25,4 +25,4 @@ If you want to audit the code or run this platform in a local environment:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/portfolio-repo-name.git](https://github.com/yourusername/portfolio-repo-name.git)
+   git clone [https://github.com/rrebldomakr/My-Portfolio-Page.git](https://github.com/yourusername/portfolio-repo-name.git)
